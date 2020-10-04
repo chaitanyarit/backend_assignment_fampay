@@ -23,7 +23,8 @@ An API to fetch latest videos sorted in reverse chronological order of their pub
 * Build and run the docker containers: docker-compose up -d --build
 
 
-## Endpoints:
+## Testing Endpoints:
+Once the docker container is build and is up and running, you can go hit the below urls with Postman or go to them in browser:
 * http://127.0.0.1:8000/api/v1/get-all-videos/
 * http://127.0.0.1:8000/api/v1/search-videos/
 * Search Example: http://127.0.0.1:8000/api/v1/search-videos/?search=Premier%20League
