@@ -1,0 +1,36 @@
+version: '3'
+services:
+  web:
+    build: .
+    command:  python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/youtube_api_fampay
+    ports:
+      - 8000:8000
+    environment:
+      - DEBUG=0
+      - ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+    depends_on:
+      - redis
+  redis:
+    image: redis:alpine
+  celery:
+    build: .
+    command: celery -A youtube_api_fampay.celery_app worker -l INFO
+    volumes:
+      - .:/youtube_api_fampay
+    environment:
+      - DEBUG=0
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+    depends_on:
+      - redis
+  celery-beat:
+    build: .
+    command: celery -A youtube_api_fampay.celery_app beat -l INFO
+    volumes:
+      - .:/youtube_api_fampay
+    environment:
+      - DEBUG=0
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+    depends_on:
+      - redis
