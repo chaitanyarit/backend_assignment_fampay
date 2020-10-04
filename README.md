@@ -33,7 +33,7 @@ An API to fetch latest videos sorted in reverse chronological order of their pub
 ### API 1
 ![API 1](res/get-all-videos.png)
 
-###API 2
+### API 2
 ![API 2](res/search-videos-1.png)
 
 ### API 2 (filter by fields)
