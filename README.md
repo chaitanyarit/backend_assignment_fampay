@@ -18,7 +18,8 @@ An API to fetch latest videos sorted in reverse chronological order of their pub
 
 * Clone this project
 * Add the GOOGLE_API_KEYS to .env file in the base directory as GOOGLE_API_KEYS="KEY1,KEY2...."
-* Follow this [link](https://docs.docker.com/engine/install/) to install docker.  
+* Follow this [link](https://docs.docker.com/engine/install/) to install docker. 
+* Go to the cloned folder from terminal
 * Build and run the docker containers: docker-compose up -d --build
 
 
